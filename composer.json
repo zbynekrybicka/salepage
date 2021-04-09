@@ -1,5 +1,5 @@
 {
-    "name": "zbynekrybicka/SalePage",
+    "name": "zbynekrybicka/sale-page",
     "description": "Konverzky",
     "require": {
         "latte/latte": "^2.10",
