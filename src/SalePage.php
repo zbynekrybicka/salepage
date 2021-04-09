@@ -71,6 +71,7 @@ class SalePage
 
         $settings = $this->loadFromXML('/Sales/Settings', ['FBpixel', 'Campaign']);
 
+
         if ($side === "landing") {
             $landing = $this->loadFromXML('/Sales/LandingPage',
                 ['Panel', 'SuperHeader', 'Header', 'SubHeader', 'Popup/Header', 'Popup/Content', 'Popup/Label'],
