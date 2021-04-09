@@ -1,4 +1,6 @@
 {
+    "name": "zbynekrybicka/SalePage",
+    "description": "Konverzky",
     "require": {
         "latte/latte": "^2.10",
         "dibi/dibi": "^4.2"
