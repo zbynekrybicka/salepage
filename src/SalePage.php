@@ -4,9 +4,6 @@ namespace SalePage;
 use Dibi\Connection;
 use Latte\Engine;
 
-
-require __DIR__ . '/vendor/autoload.php';
-
 class SalePage
 {
 

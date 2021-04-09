@@ -4,5 +4,10 @@
     "require": {
         "latte/latte": "^2.10",
         "dibi/dibi": "^4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "SalePage\\": "src/"
+        }
     }
 }
