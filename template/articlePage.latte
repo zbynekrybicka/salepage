@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>{$title}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+        }
+        .panel {
+            text-align: center;
+            padding: 15px 0;
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 36pt;
+        }
+        li {
+            margin-bottom: 1em;
+        }
+        .superheader {
+            text-align: center;
+            font-size: 30pt;
+        }
+        .subheader {
+            text-align: center;
+            font-size: 16pt;
+        }
+        .content {
+            max-width: 1200px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        img {
+            max-width: 600px;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {l}if(f.fbq)return;n=f.fbq=function(){l}n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', {$fbPixel});
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id={$fbPixel}&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<body>
+<div id="app">
+    <div class="panel">{$Panel}</div>
+    <div class="superheader">{$SuperHeader}</div>
+    <h1>{$Header}</h1>
+    <div class="subheader">{$SubHeader}</div>
+    {$Content|noescape}
+
+</div>
+</body>
+</html>

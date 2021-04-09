@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>{$title}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            font-size: 14pt;
+        }
+        #app {
+            max-width: 1200px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            display: table;
+            margin-top: 25px;
+        }
+        .frame {
+            display: table-row;
+        }
+        .img {
+            display: table-cell;
+            width: 50%;
+        }
+        .img img {
+            width: 100%;
+        }
+        .panel {
+            padding: 25px;
+            display: table-cell;
+            vertical-align: top;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            font-size: 36pt;
+        }
+        .subheader {
+            text-align: center;
+            font-size: 24pt;
+            margin-bottom: 25px;
+        }
+        .content {
+            max-width: 1200px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        a {
+            display: block;
+            padding: 10px 0;
+            background-color: darkblue;
+            color: white;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        a.download {
+            background-color: green;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {l}if(f.fbq)return;n=f.fbq=function(){l}n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', {$fbPixel});
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id={$fbPixel}&ev=PageView&noscript=1"
+        /></noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<body>
+<div id="app">
+    <div class="frame">
+        <div class="img">
+            {if $Youtube}
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{$Youtube}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            {elseif $ImageUrl}
+                <img src="{$ImageUrl}" alt="{$ImageAlt}" />
+            {/if}
+        </div>
+        <div class="panel">
+            <h1>{$Header}</h1>
+            <div class="subheader">{$SubHeader}</div>
+            <a n:if="$DownloadUrl" href="{$DownloadUrl}" class="download">{$DownloadLabel}</a>
+            {$Content|noescape}
+            <a n:if="$LinkUrl" href="{$LinkUrl}">{$LinkLabel}</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
